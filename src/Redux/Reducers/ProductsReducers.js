@@ -33,3 +33,14 @@ export const ProductDetailsReducers = (state={}, action) => {
     }
 
 }
+
+
+export const AddToCardReducers = (state = 0, action) => {
+       switch(action.type) {
+           case ActionsTypes.ADD_TO_CARD : 
+                return state + 1;
+          default : 
+                return state;
+       };     
+};
+

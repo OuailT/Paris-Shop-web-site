@@ -2,8 +2,7 @@ import axios from 'axios';
 import React,{useEffect} from 'react'
 import { useParams } from 'react-router';
 import { useSelector, useDispatch } from 'react-redux';
-import { SingleProductDetails, RemoveProductDetails } from '../Redux/Actions/Actions'
-
+import { SingleProductDetails, RemoveProductDetails, AddToCard } from '../Redux/Actions/Actions'
 
 const ProductDetails = () => {
     const product = useSelector((state)=> state.product);
@@ -35,7 +34,7 @@ const ProductDetails = () => {
               <div className="ui vertical divider">AND</div>
               <div className="middle aligned row">
                 <div className="column lp">
-                  <img className="ui fluid image" src={image} />
+                  <img className="ui fluid image" src={image} alt={category} />
                 </div>
                 <div className="column rp">
                   <h1>{title}</h1>
@@ -46,7 +45,8 @@ const ProductDetails = () => {
                   <p>{description}</p>
                   <div className="ui vertical animated button" tabIndex="0">
                     <div className="hidden content">
-                      <i className="shop icon"></i>
+                      <i className="shop icon" 
+                         onClick={()=>dispatch(AddToCard())}></i>
                     </div>
                     <div className="visible content">Add to Cart</div>
                   </div>

@@ -22,3 +22,11 @@ export const RemoveProductDetails = () => {
         type : ActionsTypes.REMOVE_PRODUCT,
     }
 }
+
+
+
+export const AddToCard = () => {
+    return {
+        type : ActionsTypes.ADD_TO_CARD,
+    }
+};
